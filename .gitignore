@@ -1,0 +1,7 @@
+.venv/
+arquivo_secreto.txt
+__pycache__
+*.*~
+*.pyc
+.SQLiteDatabaseBrowserPortable
+SQLiteDatabaseBrowserPortable_3.12.2_English.paf.exe
