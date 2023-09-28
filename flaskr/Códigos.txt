@@ -1,0 +1,12 @@
+pip install Flask
+
+app.py - aplicativo principal
+python app.py - executar aplicativo
+
+Para inicializar o banco de dados realizar os seguintes passos:
+1. Abrir o terminal
+2. Acessar a pasta do projeto
+3. Executar o comando: python
+4. Executar os comandos:
+from flaskr import init_db
+init_db()
