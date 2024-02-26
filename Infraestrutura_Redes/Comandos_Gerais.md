@@ -54,3 +54,11 @@ QUIT; # Sair do MySQL
 ~~~bash
 sudo apt-get update # Atualizar a lista de pacotes
 sudo apt-get install php libapache2-mod-php php-mysql # Instalar o PHP, o módulo do Apache e o driver do MySQL
+php -v # Verificar a versão do PHP
+
+sudo pico /etc/apache2/mods-enabled/dir.conf # Alterar a prioridade dos arquivos index.php - colocar o index.php em primeiro lugar
+
+sudo systemctl reload apache2 # Recarregar o Apache com novas configurações
+
+sudo pico /var/www/meudominio/info.php # Criar um arquivo info.php
+~~~
