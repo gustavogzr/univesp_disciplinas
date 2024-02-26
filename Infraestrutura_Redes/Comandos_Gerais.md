@@ -118,8 +118,13 @@ INSERT INTO computador (conteudo) VALUES
     ("Fonte"),
     ("Monitor"),
     ("Teclado"),
-    ("Mouse"),
+    ("Mouse")
 ;-- Inserir vários registros na tabela computador
 
 SELECT * FROM computador; -- Mostrar os registros da tabela computador
+
+exit -- Sair do MySQL
 ~~~
+
+~~~bash
+sudo pico /var/www/meudominio/listacomponentes.php # Criar um arquivo listacomponentes.php
