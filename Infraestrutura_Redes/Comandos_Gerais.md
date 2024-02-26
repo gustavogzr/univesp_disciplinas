@@ -86,3 +86,6 @@ sudo mysql # Acessar o MySQL
 ~~~sql
 CREATE DATABASE exemploinfra; -- Criar um banco de dados
 CREATE USER 'alunoinfra'@'%' IDENTIFIED WITH mysql_native_password BY 'Aluno123#@'; -- Criar um usuário
+GRANT ALL ON exemploinfra.* TO 'alunoinfra'@'%'; -- Conceder privilégios ao usuário
+exit
+~~~
