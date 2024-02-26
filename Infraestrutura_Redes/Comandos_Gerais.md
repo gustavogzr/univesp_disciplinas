@@ -181,7 +181,7 @@ sudo shutdown -h now # Desligar a máquina virtual
 
 ~~~bash
 sudo apt-get update # Atualizar a lista de pacotes
-sudo mysql # Acessar o MySQL
+sudo mysql -u root -p # Acessar o MySQL
 ~~~
 
 ~~~sql
