@@ -128,3 +128,90 @@ exit -- Sair do MySQL
 
 ~~~bash
 sudo pico /var/www/meudominio/listacomponentes.php # Criar um arquivo listacomponentes.php
+
+hostname -I # Verificar o IP do servidor
+~~~
+
+Acessar via browser a URL: <http://IP/listacomponentes.php>
+
+## Alterando forma de obtenção de IP da máquina virtual
+
+- Desligar a máquina virtual
+- Clicar com o botão direito na máquina virtual
+- Clicar em Configurações
+- Clicar em Rede
+- Alterar a opção de Adaptador de Rede para "Placa em Modo Bridge"
+- Clicar em OK
+- Iniciar a máquina virtual
+- Verificar o novo IP da máquina virtual
+
+~~~bash
+sudo apt-get install net-tools # Instalar o pacote net-tools
+ifconfig # Verificar o IP da máquina virtual
+ping 192.168.15.15 # Verificar a conectividade com a máquina virtual
+
+sudo install openssh-server # Instalar o servidor SSH
+~~~
+
+No computador local, acessar via terminal a máquina virtual:
+
+~~~bash
+ssh aluno@192.168.15.15 # Acessar a máquina virtual
+# inserir a senha do usuário aluno
+sudo shutdown -h now # Desligar a máquina virtual
+~~~
+
+## Alterar compartilhamento de pasta
+
+- Desligar a máquina virtual
+- Clicar com o botão direito na máquina virtual
+- Clicar em Configurações
+- Clicar em Pastas Compartilhadas
+- Clicar em "Acrescentar uma nova pasta compartilhada"
+- Selecionar a pasta a ser compartilhada
+- Preencher o campo "Ponto de montagem" com o caminho onde a pasta será montada
+- Marcar a opção "Montar automaticamente"
+- Clicar em OK
+- Iniciar a máquina virtual
+- Clicar em "Dispositivos" no menu da máquina virtual
+- Clicar em "Inserir imagem de CD dos Adicionais para Convidado"
+- Clicar em "Download"
+
+## Criar uma aplicação API REST
+
+~~~bash
+sudo apt-get update # Atualizar a lista de pacotes
+sudo mysql # Acessar o MySQL
+~~~
+
+~~~sql
+SHOW DATABASES; -- Mostrar os bancos de dados
+USE exemploinfra; -- Acessar o banco de dados exemploinfra
+SELECT * FROM computador; -- Mostrar os registros da tabela computador
+QUIT; -- Sair do MySQL
+~~~
+
+~~~bash
+cd /var/www/meudominio/ # Acessar o diretório do site
+mkdir exemploinfra-rest # Criar um diretório para a aplicação
+ls -la # Listar os arquivos e diretórios
+cd exemploinfra-rest/ # Acessar o diretório da aplicação
+mkdir api # Criar um diretório para a API
+mkdir classe # Criar um diretório para as classes
+mkdir config # Criar um diretório para as configurações
+cd config/ # Acessar o diretório das configurações
+sudo pico database.php # Criar um arquivo database.php
+cd.. # Voltar um diretório
+cd classe/ # Acessar o diretório das classes
+sudo pico pecas.php # Criar um arquivo pecas.php
+cd.. # Voltar um diretório
+cd api/ # Acessar o diretório da API
+sudo pico cria.php # Criar um arquivo cria.php
+sudo pico atualiza.php # Criar um arquivo atualiza.php
+sudo pico apaga.php # Criar um arquivo apaga.php
+sudo pico lertudo.php # Criar um arquivo lertudo.php
+sudo pico leiaitem.php # Criar um arquivo leiaitem.php
+
+sudo snap install postman # Instalar o postman
+postman # Abrir o postman
+~~~
