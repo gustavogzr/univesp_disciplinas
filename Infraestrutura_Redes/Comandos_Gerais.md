@@ -89,3 +89,37 @@ CREATE USER 'alunoinfra'@'%' IDENTIFIED WITH mysql_native_password BY 'Aluno123#
 GRANT ALL ON exemploinfra.* TO 'alunoinfra'@'%'; -- Conceder privilégios ao usuário
 exit
 ~~~
+
+~~~bash
+mysql -u alunoinfra -p # Acessar o MySQL com o usuário criado
+~~~
+
+~~~sql
+SHOW DATABASES; -- Mostrar os bancos de dados
+
+CREATE TABLE exemploinfra.computador (
+    item_id INT AUTO_INCREMENT,
+    conteudo VARCHAR(255),
+    PRIMARY KEY(item_id)
+); -- Criar uma tabela
+
+USE exemploinfra; -- Acessar o banco de dados exemploinfra
+SELECT * FROM computador; -- Mostrar os registros da tabela computador
+SHOW TABLES; -- Mostrar as tabelas do banco de dados exemploinfra
+
+INSERT INTO computador (conteudo) VALUES ("Placa Mãe"); -- Inserir um registro na tabela computador
+
+SELECT * FROM computador; -- Mostrar os registros da tabela computador
+
+INSERT INTO computador (conteudo) VALUES 
+    ("Memória"),
+    ("Processador"),
+    ("Placa de Vídeo"),
+    ("Fonte"),
+    ("Monitor"),
+    ("Teclado"),
+    ("Mouse"),
+;-- Inserir vários registros na tabela computador
+
+SELECT * FROM computador; -- Mostrar os registros da tabela computador
+~~~
