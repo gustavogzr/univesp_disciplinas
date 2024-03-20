@@ -1,0 +1,1 @@
+https://datageo.ambiente.sp.gov.br/geoserver/datageo/DensidadeDemografica2021/wfs?version=1.0.0&request=GetFeature&outputFormat=SHAPE-ZIP&typeName=DensidadeDemografica2021
