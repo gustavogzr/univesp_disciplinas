@@ -201,10 +201,10 @@ mkdir classe # Criar um diretório para as classes
 mkdir config # Criar um diretório para as configurações
 cd config/ # Acessar o diretório das configurações
 sudo pico database.php # Criar um arquivo database.php
-cd.. # Voltar um diretório
+cd .. # Voltar um diretório
 cd classe/ # Acessar o diretório das classes
 sudo pico pecas.php # Criar um arquivo pecas.php
-cd.. # Voltar um diretório
+cd .. # Voltar um diretório
 cd api/ # Acessar o diretório da API
 sudo pico cria.php # Criar um arquivo cria.php
 sudo pico atualiza.php # Criar um arquivo atualiza.php
