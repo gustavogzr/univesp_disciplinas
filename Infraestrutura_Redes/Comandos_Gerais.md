@@ -215,3 +215,27 @@ sudo pico leiaitem.php # Criar um arquivo leiaitem.php
 sudo snap install postman # Instalar o postman
 postman # Abrir o postman
 ~~~
+
+## Instalação do Docker
+
+~~~bash
+sudo apt-get update # Atualizar a lista de pacotes
+
+sudo apt install apt-transport-https ca-certificates curl software-properties-common # Instalar pacotes necessários
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - # Adicionar a chave GPG do repositório oficial do Docker
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" # Adicionar o repositório do Docker
+
+sudo apt update # Atualizar a lista de pacotes
+
+apt-cache policy docker-ce # Verificar a disponibilidade do Docker
+
+sudo apt install docker-ce # Instalar o Docker
+
+sudo systemctl status docker # Verificar o status do Docker
+
+sudo usermod -aG docker ${USER} # Adicionar o usuário ao grupo docker
+
+
+
