@@ -216,7 +216,7 @@ sudo snap install postman # Instalar o postman
 postman # Abrir o postman
 ~~~
 
-## Instalação do Docker
+## Instalação e Uso do Docker
 
 ~~~bash
 sudo apt-get update # Atualizar a lista de pacotes
@@ -235,7 +235,64 @@ sudo apt install docker-ce # Instalar o Docker
 
 sudo systemctl status docker # Verificar o status do Docker
 
+sudo systemctl start docker # Iniciar o Docker
+
 sudo usermod -aG docker ${USER} # Adicionar o usuário ao grupo docker
 
+su - ${USER} # Sair e entrar novamente no sistema
 
+id -nG # Verificar os grupos do usuário. O grupo docker deve aparecer
 
+docker # listar os comandos do Docker
+
+docker --version # Verificar a versão do Docker
+
+docker run hello-world # Executar o container hello-world. Normalmente usado para verificar se a instalação do Docker está correta
+
+docker pull ubuntu # Baixar a imagem do Ubuntu
+
+docker images # Listar as imagens baixadas
+
+docker run -it ubuntu # Executar o container do Ubuntu. O parâmetro -it é para executar o container em modo interativo
+
+docker stop container_id # Parar o container. O container_id é o ID do container
+
+apt update # Atualizar a lista de pacotes do Ubuntu. Não é necessário o uso do sudo pois o usuário já está no modo root
+
+apt install nano net-tools systemctl # Instalar os pacotes nano, net-tools e systemctl
+
+apt-get install apache2 # Instalar o Apache
+
+systemctl status apache2 # Verificar o status do Apache
+
+systemctl start apache2 # Iniciar o Apache
+
+hostname -I # Verificar o IP do container
+~~~
+
+No navegador do computador local, acessar a URL: <http://IP_do_container>
+
+~~~bash
+mkdir /var/www/meudominio # Criar um diretório para o site
+
+chown -R $USER:$USER /var/www/meudominio # Alterar o proprietário do diretório
+
+chmod -R 755 /var/www/meudominio # Alterar as permissões do diretório
+
+pico /var/www/meudominio/index.html # Criar um arquivo index.html
+
+pico /etc/apache2/sites-available/meudominio.conf # Criar um arquivo de configuração do site
+
+a2ensite meudominio.conf # Habilitar o site
+
+a2dissite 000-default.conf # Desabilitar o site padrão
+
+apache2ctl configtest # Verificar a configuração do Apache. A saída deve ser "Syntax OK"
+
+systemctl restart apache2 # Reiniciar o Apache
+~~~
+
+No navegador do computador local, acessar a URL: <http://IP_do_container>
+
+~~~bash
+apt-get install mysql-server # Instalar o MySQL
