@@ -296,3 +296,60 @@ No navegador do computador local, acessar a URL: <http://IP_do_container>
 
 ~~~bash
 apt-get install mysql-server # Instalar o MySQL
+
+service mysql start # Iniciar o MySQL
+
+mysql_secure_installation # Configurar o MySQL
+
+mysql # Acessar o MySQL
+
+apt-get install php libapache2-mod-php php-mysql # Instalar o PHP, o módulo do Apache e o driver do MySQL
+
+php -v # Verificar a versão do PHP
+
+pico /etc/apache2/mods-enabled/dir.conf # Alterar a prioridade dos arquivos index.php - colocar o index.php em primeiro lugar
+
+systemctl restart apache2 # Reiniciar o Apache
+
+pico /var/www/meudominio/info.php # Criar um arquivo info.php para testar o PHP
+~~~
+
+Acessar via browser a URL <http://IP_do_container/info.php>
+
+~~~bash
+docker commit -m "Tools, Apache, PHP e MySQL" -a "Gustavo Zarpelon Radaelli" ad80b1bd6f54 aluno/ubuntu-infra # Criar uma nova imagem com as ferramentas instaladas
+
+docker images # Listar as imagens
+
+docker ps -a # Listar os containers.
+
+docker ps -l # Listar o último container criado
+
+docker stop container_id # Parar o container. O container_id é o ID do container
+
+docker start container_id # Iniciar o container. O container_id é o ID do container
+
+docker exec -it container_id bash # Acessar o container. O container_id é o ID do container
+
+docker rm container_id # Remover o container. O container_id é o ID do container
+
+docker login -u docker_registry_username # Fazer login no Docker Hub. O docker_registry_username é o nome de usuário do Docker Hub
+
+docker tag aluno/ubuntu-infra docker_registry_username/ubuntu-infra # Adicionar uma tag à imagem. O docker_registry_username é o nome de usuário do Docker Hub
+
+docker push docker_registry_username/ubuntu-infra # Enviar a imagem para o Docker Hub. O docker_registry_username é o nome de usuário do Docker Hub
+
+
+~~~
+
+## Instalação de AWS CLI
+
+~~~bash
+sudo apt-get install unzip # Instalar o unzip
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" # Baixar o arquivo zip da AWS CLI
+
+unzip awscliv2.zip # Descompactar o arquivo zip
+
+sudo ./aws/install # Instalar a AWS CLI
+~~~
