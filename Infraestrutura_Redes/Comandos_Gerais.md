@@ -338,8 +338,6 @@ docker login -u docker_registry_username # Fazer login no Docker Hub. O docker_r
 docker tag aluno/ubuntu-infra docker_registry_username/ubuntu-infra # Adicionar uma tag à imagem. O docker_registry_username é o nome de usuário do Docker Hub
 
 docker push docker_registry_username/ubuntu-infra # Enviar a imagem para o Docker Hub. O docker_registry_username é o nome de usuário do Docker Hub
-
-
 ~~~
 
 ## Instalação de AWS CLI
