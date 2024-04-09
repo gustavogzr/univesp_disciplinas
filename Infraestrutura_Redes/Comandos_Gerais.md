@@ -340,6 +340,26 @@ docker tag aluno/ubuntu-infra docker_registry_username/ubuntu-infra # Adicionar 
 docker push docker_registry_username/ubuntu-infra # Enviar a imagem para o Docker Hub. O docker_registry_username é o nome de usuário do Docker Hub
 ~~~
 
+## Instalação do Google Cloud SDK (Software Development Kit)
+
+Seguir as instruções do site <https://cloud.google.com/sdk/docs/install>
+
+Para verificar a instalação, executar o comando:
+
+~~~bash
+gcloud # a saída irá mostrar os comandos do gcloud
+
+gcloud --version # verificar a versão do gcloud
+
+gcloud init # inicializar o gcloud
+
+gcloud auth login # autenticar no gcloud
+~~~
+
+
+~~~bash
+# Mostrar todas as imagens criadas localmente pelo docker:
+docker images
 ## Instalação de AWS CLI
 
 ~~~bash
